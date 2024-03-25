@@ -1,0 +1,7 @@
+.app-div-rectangle {
+  @apply backdrop-blur-[54px] opacity-100 rounded-lg border-2 border-[#a6adbb] h-full w-full z-0 flex flex-col justify-center items-center;
+}
+
+.container-app {
+  height: calc(100vh - 69.31px);
+}

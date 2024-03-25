@@ -1,12 +1,12 @@
 import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
-import { Store } from '@ngrx/store';
-import { UserLogin } from '../login/models/user-login';
-import { selectUserLogged } from '../login/store/user.selector';
+// import { Store } from '@ngrx/store';
+// import { UserLogin } from '../login/models/user-login';
+// import { selectUserLogged } from '../login/store/user.selector';
 import { CommonModule } from '@angular/common';
 import { VariantIconComponent } from '../../shared/components/variant-icon.component';
 import { ButtonIcon } from '../../shared/models/button-element';
 import { RouterLink } from '@angular/router';
-import { principalRoute } from '../../../environments/route';
+// import { principalRoute } from '../../../environments/route';
 
 @Component({
   selector: 'app-home-page',
@@ -22,10 +22,10 @@ import { principalRoute } from '../../../environments/route';
 })
 export default class HomePageComponent {
 
-  constructor(private store: Store) {}
+  // constructor(private store: Store) {}
 
-  principalRoute = signal(principalRoute);
-  userLogged = this.store.selectSignal<UserLogin | null>(selectUserLogged);
+  // principalRoute = signal(principalRoute);
+  // userLogged = this.store.selectSignal<UserLogin | null>(selectUserLogged);
   iconIoc = signal<ButtonIcon>({
     variant: 'operationIcon',
   });

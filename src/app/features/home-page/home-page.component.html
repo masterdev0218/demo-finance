@@ -6,7 +6,7 @@
         <div class="flex items-center justify-center">
           <div class="flex flex-col justify-center items-center">
             <h3 class="mb-4 text-2xl font-extrabold text-gray-900 md:text-5xl lg:text-4xl text-center">
-              <span class="text-[#4c596e] drop-shadow-[5px_0_10px_#ffffff9e]">BENVENUTO, {{ userLogged()?.name | uppercase }}</span>
+              <!-- <span class="text-[#4c596e] drop-shadow-[5px_0_10px_#ffffff9e]">BENVENUTO, {{ userLogged()?.name | uppercase }}</span> -->
             </h3>
           </div>
         </div>
@@ -17,14 +17,14 @@
           <p class="w-11/12 text-lg font-semibold text-white-500 text-centerb drop-shadow-[5px_0_10px_#000000e0] text-center">Seleziona nel menu sottostante l'area in cui desideri navigare.</p>
         </div>
         <div class="btm-nav h-1/5">
-          <button class="bg-[#14334f] text-white" [routerLink]="[principalRoute().ioc]">
+          <!-- <button class="bg-[#14334f] text-white" [routerLink]="[principalRoute().ioc]">
             <app-variant-icon [marginTop]="iconIoc().marginTop" [variant]="iconIoc().variant"></app-variant-icon>
             <span class="btm-nav-label">IOC</span>
           </button>
           <button class="bg-[#004b7d] text-white" [routerLink]="[principalRoute().scheduler]">
             <app-variant-icon [marginTop]="iconScheduler().marginTop" [variant]="iconScheduler().variant"></app-variant-icon>
             <span class="btm-nav-label">Schedulatore / Blue Button</span>
-          </button>
+          </button> -->
         </div>
       </div>
     </div>

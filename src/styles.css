@@ -1,1 +1,26 @@
-/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.view-height {
+  min-height: calc(100vh - 69.32px);
+  /* margin-top: 120.33px !important; */
+}
+
+/* BUTTONS */
+
+.btn.neutral {
+  @apply text-[#e5e6e6] hover:bg-gradient-to-r from-[#232a33] to-[#394451] hover:border-2;
+}
+
+.btn.error {
+  @apply text-[#e5e6e6] hover:bg-gradient-to-r from-[#ff5861] to-[#e31010b6];
+}
+
+.btn.success {
+  @apply text-[#e5e6e6] hover:bg-gradient-to-r from-[#00a96e] to-[#077c53];
+}
+
+.btn-login-microsoft {
+  @apply px-4 py-3 w-full flex justify-center items-center gap-2 rounded-lg font-semibold text-sm  text-[#e5e6e6] hover:bg-gradient-to-r from-[#232a33] to-[#394451];
+}

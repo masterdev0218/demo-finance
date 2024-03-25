@@ -3,11 +3,11 @@ import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
 import { FooterComponent } from '../footer/footer.component';
 import { HeaderComponent } from '../header/header.component';
 import { RouterLink, RouterOutlet } from '@angular/router';
-import { principalRoute } from '../../../../environments/route';
-import { Store } from '@ngrx/store';
-import { UserLogin } from '../../../features/login/models/user-login';
-import { selectUserLogged } from '../../../features/login/store/user.selector';
+// import { Store } from '@ngrx/store';
+// import { UserLogin } from '../../../features/login/models/user-login';
+// import { selectUserLogged } from '../../../features/login/store/user.selector';
 import { ButtonIcon } from '../../../shared/models/button-element';
+import { principalRoute } from '../../../enviroments/route';
 
 @Component({
   selector: 'app-layout',
@@ -25,7 +25,7 @@ import { ButtonIcon } from '../../../shared/models/button-element';
 })
 export default class LayoutComponent {
   principalRoute = signal(principalRoute);
-  userLogged = this.store.selectSignal<UserLogin | null>(selectUserLogged);
+  // userLogged = this.store.selectSignal<UserLogin | null>(selectUserLogged);
   iconIoc = signal<ButtonIcon>({
     variant: 'operationIcon',
     marginTop: 'mt-[5px]'
@@ -43,7 +43,7 @@ export default class LayoutComponent {
     marginTop: 'mt-[5px]'
   });
 
-  constructor(private store: Store) {
+  // constructor(private store: Store) {
 
-  }
+  // }
 }

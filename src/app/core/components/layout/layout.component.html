@@ -15,7 +15,7 @@
     <label for="my-drawer" aria-label="close sidebar" class="drawer-overlay"></label>
     <ul class="menu p-4 w-80 min-h-full bg-base-200 text-base-content">
       <!-- Sidebar content here -->
-      <label for="my-drawer" class="drawer-button" [routerLink]="[principalRoute().ioc]" routerLinkActive="bg-[#272c33]">
+      <label for="my-drawer" class="drawer-button" [routerLink]="[principalRoute()]" routerLinkActive="bg-[#272c33]">
         <li>
           <div class="flex">
             <app-variant-icon [marginTop]="iconIoc().marginTop" [variant]="iconIoc().variant"></app-variant-icon>
@@ -23,7 +23,7 @@
           </div>
         </li>
       </label>
-      <label for="my-drawer" class="drawer-button" [routerLink]="[principalRoute().scheduler]" routerLinkActive="bg-[#272c33]">
+      <label for="my-drawer" class="drawer-button" [routerLink]="[principalRoute()]" routerLinkActive="bg-[#272c33]">
         <li>
           <div class="flex">
             <app-variant-icon [marginTop]="iconScheduler().marginTop" [variant]="iconScheduler().variant"></app-variant-icon>
@@ -31,7 +31,7 @@
           </div>
         </li>
       </label>
-      @if (this.userLogged()?.role?.name === 'ADMIN') {
+      <!-- @if (this.userLogged()?.role?.name === 'ADMIN') {
         <label class="drawer-button">
           <div class="dropdown dropdown-hover w-full">
             <li tabindex="0">
@@ -48,12 +48,12 @@
                     <label for="my-drawer" class="cursor-pointer">Gestione Utenti</label>
                   </div>
                 </li>
-                <!-- <li class="bg-[#2b333e] w-full"><label for="my-drawer">Gestione Ruoli</label></li> -->
+                <li class="bg-[#2b333e] w-full"><label for="my-drawer">Gestione Ruoli</label></li>
               </ul>
             </div>
           </div>
         </label>
-      }
+      } -->
     </ul>
   </div>
 </div>

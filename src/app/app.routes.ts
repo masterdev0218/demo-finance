@@ -1,14 +1,8 @@
 import { Routes } from '@angular/router';
-import { principalRoute } from './enviroments/route';
-import { LoginComponent } from './features/login/login.component';
+import { principalRoute } from './environments/route';
+import { HomeComponent } from './home/home.component';
 
 export const routes: Routes = [
-  // { path: '',
-  //   loadComponent: () => import('./core/components/layout/layout.component'),
-  //   children: [
-  //     { path: '', loadComponent: () => import('./features/home-page/home-page.component') },
-  //   ]
-  // },
-  { path: '', component: LoginComponent },
+  { path: '', component: HomeComponent },
   { path: '**', redirectTo: '', pathMatch: 'full' }
 ];

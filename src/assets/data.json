@@ -1,0 +1,77 @@
+{
+    "markets":[
+        {
+            "name":"Vanguard S&p 500 Etf",
+            "symbol":"VOO",
+            "change_today":"2.62",
+            "percent_today":"0.57",
+            "price":"462.61",
+            "image_name":"1.svg"
+        },
+        {
+            "name":"Telo Genomics Corp",
+            "symbol":"TELO",
+            "change_today":"4.23",
+            "percent_today":"0",
+            "price":"4.23",
+            "image_name":"2.svg"
+        },
+        {
+            "name":"Asmi Holding Nv",
+            "symbol":"ASML",
+            "change_today":"12.4",
+            "percent_today":"-1.45",
+            "price":"840",
+            "image_name":"3.svg"
+        },
+        {
+            "name":"Apple Inc",
+            "symbol":"AAPL",
+            "change_today":"0.22",
+            "percent_today":"0.13",
+            "price":"840",
+            "image_name":"4.svg"
+        },
+        {
+            "name":"Nvidia Corporation",
+            "symbol":"NVDA",
+            "change_today":"13.66",
+            "percent_today":"1.63",
+            "price":"854.01",
+            "image_name":"5.svg"
+        },
+        {
+            "name":"Tesla Motors Inc",
+            "symbol":"TSLA",
+            "change_today":"-4.43",
+            "percent_today":"-2.85",
+            "price":"151.02",
+            "image_name":"6.svg"
+        },
+        {
+            "name":"Taiwan Semiconductor Manufacturing",
+            "symbol":"TSM",
+            "change_today":"-5.18",
+            "percent_today":"-3.73",
+            "price":"133.85",
+            "image_name":"7.svg"
+        },
+        {
+            "name":"Direxion Daily China Bull",
+            "symbol":"TSM",
+            "change_today":"1",
+            "percent_today":"5.59",
+            "price":"18.9",
+            "image_name":"8.svg"
+        },
+        {
+            "name":"Ethereum Tracker",
+            "symbol":"XBTE",
+            "change_today":"0.29",
+            "percent_today":"0.38",
+            "price":"76.1",
+            "image_name":"9.svg"
+        }
+    
+    ]
+} 

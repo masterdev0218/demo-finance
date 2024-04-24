@@ -1,0 +1,160 @@
+<div class="flex bg-gray-100">
+    <!-- Sidebar -->
+    <div class="bg-[#4d399f] text-white h-screen w-24">
+      <div class="flex items-center justify-center h-16 mt-4">
+        <img src="assets/images/logo.png" width="60" height="60">
+      </div>
+      <ul class="mt-6">
+        <li class="flex justify-center text-sm ">
+          <div class="flex justify-center rounded-lg hover:bg-[#7c5dfb]" style="width: 50px;height: 50px;">
+            <a href="#" class="block"><div class=""><img class="py-3 " src="assets/images/icon1.svg"></div></a>
+          </div>
+        </li>
+        <li class="flex justify-center text-sm ">
+          <div class="flex justify-center rounded-lg hover:bg-[#7c5dfb]" style="width: 50px;height: 50px;">
+            <a href="#" class="block"><div class=""><img class="py-3 " src="assets/images/icon2.svg"></div></a>
+          </div>
+        </li>
+        <li class="flex justify-center text-sm ">
+          <div class="flex justify-center rounded-lg hover:bg-[#7c5dfb]" style="width: 50px;height: 50px;">
+            <a href="#" class="block"><div class=""><img class="py-3 " src="assets/images/icon3.svg"></div></a>
+          </div>
+        </li>
+        <li class="flex justify-center text-sm ">
+          <div class="flex justify-center rounded-lg hover:bg-[#7c5dfb]" style="width: 50px;height: 50px;">
+            <a href="#" class="block"><div class=""><img class="py-3 " src="assets/images/icon4.svg"></div></a>
+          </div>
+        </li>
+        <li class="flex justify-center text-sm ">
+          <div class="flex justify-center rounded-lg hover:bg-[#7c5dfb]" style="width: 50px;height: 50px;">
+            <a href="#" class="block"><div class=""><img class="py-3 " src="assets/images/icon5.svg"></div></a>
+          </div>
+        </li>
+        <li class="flex justify-center text-sm ">
+          <div class="flex justify-center rounded-lg hover:bg-[#7c5dfb]" style="width: 50px;height: 50px;">
+            <a href="#" class="block"><div class=""><img class="py-3 " src="assets/images/icon6.svg"></div></a>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Content -->
+    <div class="flex flex-col flex-grow p-3 mt-1">
+      <div class="flex flex-row justify-items-center">
+        <img src="assets/images/left.svg" class="mr-1" width="38" height="38"/>
+        <div class="text-black" style="font-size: 22px; font-weight: 600;">Discover</div>
+      </div>
+      <div class="overflow-x-auto rounded-lg mt-4 ml-4 bg-white shadow-md">
+
+        <div class="p-6" >
+          <div class="relative">
+            <input type="text" (keyup)="filterData($event)" class="w-25 border border-gray-300 rounded-lg py-2 px-4 pl-10 focus:outline-none focus:border-blue-500" placeholder="Search here">
+            <div class="absolute inset-y-0 left-0 flex items-center pl-3">
+              <svg class="h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M14.8 13.3l4.3 4.3c.2.2.2.5 0 .7l-1.3 1.3c-.2.2-.5.2-.7 0l-4.3-4.3c-1.5 1.1-3.4 1.8-5.4 1.8C3.9 17.1 0 13.2 0 8.6S3.9 0 8.6 0s8.6 3.9 8.6 8.6c0 2-.7 3.9-1.8 5.4zm-6.2.3c2.7 0 4.8-2.2 4.8-4.8s-2.2-4.8-4.8-4.8S3.8 6.1 3.8 8.8s2.2 4.8 4.8 4.8z" clip-rule="evenodd"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+      
+        <table class="w-full border-collapse border-t border-b border-gray-100 rounded-lg">
+          <thead class="bg-gray-100">
+            <tr class="text-gray-500 font-aria">
+              <th class="border-t border-b border-gray-200 px-6 py-2 text-left w-1/4">Name</th>
+              <th class="border-t border-b border-gray-200 px-6 py-2 text-left w-1/4">Change Today</th>
+              <th class="border-t border-b border-gray-200 px-6 py-2 text-left w-1/4">Price</th>
+            </tr>
+          </thead>
+          <tbody>
+            <ng-container *ngIf="filterData">
+            <tr *ngFor="let data of filteredData let i = index" class="hover:cursor-pointer" (click)="openModal(i)">
+                <td class="border-t border-b border-gray-200 px-6 py-3 w-1/6">
+                    <div class="flex items-center">
+                      <img src="assets/images/{{ data.image_name }}" alt="Image description" class="mr-2">
+                      <div>
+                        <span class="block text-gray-600 font-bold">{{ data.name }}</span>
+                        <span class="block">{{ data.symbol }}</span>
+                      </div>  
+                    </div>
+                  </td>
+              <td class="border-t border-b border-gray-200 px-6 py-3 {{getColorFromStatus(data.percent_today)}} w-1/6">
+                <div>
+                  <span class="block font-bold">{{convertToDollars(data.change_today)}}</span>
+                  <span class="block text-sm">{{convertToPercentage(data.percent_today)}}</span>
+                </div>
+              </td>
+              <td class="border-t border-b border-gray-200 text-gray-500 px-6 py-3 font-bold w-2/5">
+                {{convertToDollars(data.price)}}
+                <div class="flex justify-center float-right">
+                  <button class="flex items-center justify-center px-4 py-2 bg-[#4dc970] text-white rounded-md">
+                    <img src="assets/images/buy.svg" class="h-4 w-4 mr-2"/>
+                    Buy
+                  </button>
+                  <button class="flex items-center justify-center px-4 py-2 bg-[#ff6262] text-white rounded-md ml-4">
+                    <img src="assets/images/sell.svg" class="h-4 w-4 mr-2"/>
+                    Sell
+                  </button>
+                </div>
+              </td>
+            </tr>
+            </ng-container>
+            <!-- Add more rows as needed -->
+          </tbody>
+        </table>
+      </div>
+      <!-- Modal -->
+      <div class="fixed z-10 inset-0 overflow-y-auto" *ngIf="isModalOpen">
+        <div class="flex items-center justify-center min-h-screen">
+          <div class="modal-overlay absolute w-full h-full bg-gray-900 opacity-50"></div>
+      
+          <div class="modal-container bg-white w-1/4 mx-auto rounded-lg shadow-lg z-50 overflow-y-auto ">
+            <div class="modal-content p-6">
+              <!-- Modal backdrop -->
+
+              <!-- X icon for closing the modal -->
+              <button class="float-right top-0 right-0 text-gray-500 hover:text-gray-600 focus:outline-none" (click)="closeModal()">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M15 3L3 15" stroke="#6B7280" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M15 15L3 3" stroke="#6B7280" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+              </button>
+                <!-- Modal content goes here -->
+                <!-- Modal content -->
+                <h2 class="text-lg font-semibold mb-4 text-black font-bold">{{ shortenName(selectedData.name) }}</h2>
+                <div class="bg-white rounded-lg">
+                  <!-- Grid container for two columns -->
+                  <div class="grid grid-cols-2 justify-between">
+                    <!-- First column -->
+                    <div>
+                      <p class="text-black font-bold">{{ selectedData.name }}</p>
+                      <p>{{ selectedData.symbol }}</p>
+                    </div>
+                    <!-- Second column -->
+                    <div class="text-right">
+                      <p class="font-bold text-black">{{ convertToDollars(selectedData.price)}}</p>
+                      <p class="{{getColorFromStatus(selectedData.percent_today)}} text-sm">{{ convertToPercentage(selectedData.percent_today )}}</p>
+                    </div>
+                  </div>
+                </div>
+                  <!-- First row -->
+                  <div class="mt-6">
+                    <button class="flex items-center justify-center px-4 py-2 bg-[#4dc970] text-white rounded-md w-full">
+                      <img src="assets/images/buy.svg" class="h-4 w-4 mr-2"/>
+                      Buy
+                    </button>
+                  </div>
+                  <!-- Second row -->
+                  <div class="mt-2">
+                    <button class="flex items-center justify-center px-4 py-2 bg-[#ff6262] text-white rounded-md w-full">
+                      <img src="assets/images/sell.svg" class="h-4 w-4 mr-2"/>
+                      Sell
+                    </button>
+                  </div>
+                
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

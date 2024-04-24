@@ -9,6 +9,7 @@ import { CommonModule } from '@angular/common';
   standalone: true,
 })
 
+
 export class HomeComponent implements OnInit {
   title = 'json-read-example';
   marketData:any;

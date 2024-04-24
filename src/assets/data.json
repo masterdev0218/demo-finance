@@ -67,10 +67,18 @@
         {
             "name":"Ethereum Tracker",
             "symbol":"XBTE",
+            "change_today":"9.26",
+            "percent_today":"3.58",
+            "price":"267.81",
+            "image_name":"9.svg"
+        },
+        {
+            "name":"Blackrock Capital Allocation Trust",
+            "symbol":"BCAT",
             "change_today":"0.29",
             "percent_today":"0.38",
             "price":"76.1",
-            "image_name":"9.svg"
+            "image_name":"10.svg"
         }
     
     ]
